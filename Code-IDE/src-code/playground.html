@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Code Editor</title>
+<!-- add icon link -->
+<link rel="icon" href="assets/images/cit.png" type="image/x-icon">
+<script src="assets/js/ace-editor/src-noconflict/ace.js"></script>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/css/editor-styles.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Menu.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Team-Clean.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body style="background: #d1d1d1;">
+    <nav class="navbar navbar-light navbar-expand-md" style="color: rgb(255,255,255);background: var(--bs-orange);">
+        
+        <div class="container-fluid">
+            <h2 style="font-family: Alata, sans-serif;"><strong>Chartered Institute of Technology</strong></h2>
+            <div>
+                <a class="navbar-brand" href="#"> </a><button data-bs-toggle="collapse" class="navbar-toggler"
+                    data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
+                        class="navbar-toggler-icon"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto main-nav">
+                    <li class="nav-item"><a class="nav-link" id="home" style="color: var(--bs-white);"
+                            href="index.html"><strong>Home </strong></a>
+                    </li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="about.html"
+                            style="color: var(--bs-white);"><strong>About Us</strong></a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <h1
+        style="font-family: Alata, sans-serif;font-size: 51.9px;color: #4b6584;text-align: center;margin-bottom: 8px;margin-top: 49px;">
+        <strong>Code Playground</strong>
+    </h1>
+    <p style="text-align: center;font-family: Alata, sans-serif;color: #383838;"><br><strong><em>"Any fool can write
+                code that a computer can understand. Good programmers write code that humans can understand.” –
+                Martin
+                Fowler</em></strong><br><br></p>
+
+
+
+    <div class="editor">
+        <div class="dropdown" style="text-align: center; margin-left:56%;">
+            <select class="btn btn-primary dropdown-toggle text-center" aria-expanded="false" data-bs-toggle="dropdown"
+                data-bss-hover-animate="glow" type="button" id="choose_language" onchange="editorLib.getCodeLanguage()">
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-nowrap text-center"
+                    style="width: 114px;">
+                    <option class="dropdown-item" value="50"><strong>Choose Language</strong></option>
+                    <option class="dropdown-item" value="46"><strong>Bash</strong></option>
+                    <option class="dropdown-item" value="50"><strong>C</strong></option>
+                    <option class="dropdown-item" value="54"><strong>C++</strong></option>
+                    <!-- <option class="dropdown-item" value="51"><strong>C#</strong></option> -->
+                    <!-- <option class="dropdown-item" value="60"><strong>Go</strong></option> -->
+                    <!-- <option class="dropdown-item" value="61"><strong>Haskell</strong></option> -->
+                    <option class="dropdown-item" value="62"><strong>Java</strong></option>
+                    <option class="dropdown-item" value="63"><strong>JavaScript</strong></option>
+                    <option class="dropdown-item" value="68"><strong>PHP</strong></option>
+                    <option class="dropdown-item" value="71"><strong>Python3</strong></option>
+                    <!-- <option class="dropdown-item" value="73"><strong>Ruby</strong></option> -->
+                    <!-- <option class="dropdown-item" value="74"><strong>TypeScript</strong></option> -->
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select class="btn btn-primary dropdown-toggle text-center" aria-expanded="false" data-bs-toggle="dropdown"
+                data-bss-hover-animate="glow" type="button" id="choose_theme" onchange="editorLib.getAndChangeTheme();">
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-nowrap text-center"
+                    style="width: 114px;">
+                    <option class="dropdown-item" value="github"><strong>Editor Theme</strong></option>
+                    <option class="dropdown-item" value="ambiance"><strong>Ambiance</strong></option>
+                    <option class="dropdown-item" value="chaos"><strong>Chaos</strong></option>
+                    <option class="dropdown-item" value="chrome"><strong>Chrome</strong></option>
+                    <option class="dropdown-item" value="clouds"><strong>Cloud</strong></option>
+                    <option class="dropdown-item" value="cobalt"><strong>Cobalt</strong></option>
+                    <option class="dropdown-item" value="clouds_midnight"><strong>Clouds Midnight</strong></option>
+                    <option class="dropdown-item" value="dawn"><strong>Dawn</strong></option>
+                    <option class="dropdown-item" value="dracula"><strong>Dracula</strong></option>
+                    <option class="dropdown-item" value="dreamweaver"><strong>Dreamweaver</strong></option>
+                    <option class="dropdown-item" value="eclipse"><strong>Eclipse</strong></option>
+                    <option class="dropdown-item" value="github"><strong>Github</strong></option>
+                    <option class="dropdown-item" value="monokai"><strong>Monokai</strong></option>
+                    <option class="dropdown-item" value="nord_dark"><strong>Nord Dark</strong></option>
+                    <option class="dropdown-item" value="sqlserver"><strong>SQL Server</strong></option>
+                    <option class="dropdown-item" value="solarized_light"><strong>Solarized Light</strong></option>
+                    <option class="dropdown-item" value="terminal"><strong>Terminal</strong></option>
+                    <option class="dropdown-item" value="twilight"><strong>Twilight</strong></option>
+                    <option class="dropdown-item" value="tomorrow_night_eighties"><strong>Tomorrow Night</strong>
+                    </option>
+                    <option class="dropdown-item" value="vibrant_ink"><strong>Vibrant Ink</strong></option>
+                    <option class="dropdown-item" value="xcode"><strong>XCode</strong></option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select class="btn btn-primary dropdown-toggle text-center" aria-expanded="false" data-bs-toggle="dropdown"
+                data-bss-hover-animate="glow" type="button" id="console_theme" onchange="consoleTheme();">
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-nowrap text-center"
+                    style="width: 114px;">
+                    <option class="dropdown-item" value="none"><strong>Console Theme</strong></option>
+                    <option class="dropdown-item" value="#fff"><strong>Light</strong></option>
+                    <option class="dropdown-item" value="#0f0f0f"><strong>Dark</strong></option>
+            </select>
+        </div>
+        <div class="editor__wrapper">
+            <div class="editor__body">
+                <strong style="margin-left: 80%; color:#000000;   font-weight: 900;">STD. INPUT</strong>
+                <div id="editorCode" class="editor__code"></div>
+                <div id="editorStdin" class="stdin__code"></div>
+            </div>
+            <div class="editor__footer">
+                <div class="editor__footer--left">
+                    <button class="editor__btn editor__run"><b>Run ></b></button>
+                    <button class="editor__btn editor__reset"><b>Reset ></b></button>
+                </div>
+                <div class="editor__footer--right">
+                    <div class="editor__console" id="console">
+                        <pre id="ans">> Output: </pre></div>
+                        <ul class="editor__console-logs"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="footer-basic" style="margin-top: 200px;background: #a5b1c2;height: -122px;padding-bottom: 0px;">
+        <div class="social" style="padding-bottom: 0px;"><a href="https://github.com/slashharsh/CIT-Ecollab"><i
+            class="icon ion-social-github"></i></a>
+</div>
+<p class="copyright" style="color: #4b6584;padding-bottom: 10px;"><strong>Made with <i class="icon ion-heart" style="color: #e25555;"></i> for
+    CIT</strong>
+</p>
+</footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+    <script>
+        function consoleTheme() {
+            consoleHex = document.getElementById("console_theme").value;
+            document.getElementById("console").style.backgroundColor = consoleHex;
+        }
+    </script>
+    <!-- Required Ace Libraries -->
+    <script src="assets/js/ace-editor/src-noconflict/ace.js"></script>
+    <script src="assets/js/ace-editor/src-noconflict/mode-javascript.js"></script>
+    <script src="assets/js/ace-editor/src-noconflict/ext-spellcheck.js"></script>
+    <script src="assets/js/ace-editor/src-noconflict/ext-language_tools.js"></script>
+    <!-- Custom Scripts -->
+    <script src="assets/js/editor.js"></script>
+    <script src="assets/js/editor-console.js"></script>
+</body>
+
+</html>

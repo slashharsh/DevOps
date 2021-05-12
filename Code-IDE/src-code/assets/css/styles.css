@@ -1,0 +1,27 @@
+#choose_theme{
+        border: 2px solid #333;
+
+}
+#choose_language{
+        border: 2px solid #333;
+
+}
+#console_theme{
+        border: 2px solid #333;
+
+}
+#console_theme:hover {
+        background-color:#d1d1d1;
+}
+#choose_theme:hover {
+        background-color:#d1d1d1;
+}
+#choose_language:hover {
+        background-color:#d1d1d1;
+}
+
+#ans{
+        margin-left: 10px;
+        font-size: 25px;
+        color: orange;
+}
