@@ -28,7 +28,7 @@ The entire application is contained within the `main.py` file.
  ##### PUT Request
 - Update value for department (dept) using name.
 
-`PUT /delete/<name>/<dept>`
+`PUT /update/<name>/<dept>`
  http://127.0.0.1:5000/update/harsh/ME
 
 ## Setup
