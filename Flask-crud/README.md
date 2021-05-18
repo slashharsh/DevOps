@@ -1,7 +1,7 @@
 ## Flask-MongoDB CRUD Application
 This is simple Flask-MongoDB API for Create, Read, Update, Delete(CRUD) operations.
 
-The entire application is contained within the main.py file.
+The entire application is contained within the `main.py` file.
  
 ## Working
 ### API Documentation
