@@ -74,6 +74,7 @@ $
 Try to learn the following comparisions and topics.
 - Use of arguments with various commands
 - Types of files stored in different directory like /sbin, /etc.
+- I/O redirection
 
 ## Up Next
 - Part-3 Basic System Administration in Linux
